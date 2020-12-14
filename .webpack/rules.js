@@ -49,7 +49,7 @@ function rules(themePaths, selectMode, selectTarget) {
                     options: {
                         importLoaders: 1,
                         localIdentName: '[name]-[local]-[hash:base64:3]',
-                        modules: false,
+                        modules: true,
                     },
                 },
                 {
@@ -59,6 +59,7 @@ function rules(themePaths, selectMode, selectTarget) {
                         @import "_vars";
                         @import "_mixins";
                         @import "_normalize";
+                        @import "_fonts.scss";
                         @import "_reset";
                         `,
                         includePaths: ['src/scss'],
