@@ -1,4 +1,4 @@
-# 🔥Killer Storybook Config🔥
+# UI Kit Tutorial By Curious Byte
 ### Storybook (v5), Webpack, React, Typescript, SCSS, ESLint and GraphQL
 By [Harry Ghazni](https://github.com/hghazni)
 
