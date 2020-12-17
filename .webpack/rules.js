@@ -76,22 +76,10 @@ function rules(themePaths, selectMode, selectTarget) {
             ].filter(Boolean),
         },
         {
-            test: /\.(jpe?g|png|svg|gif)$/,
+            test: /\.(jpe?g|png|ttf|eot|svg|gif|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             use: [
                 {
                     loader: 'file-loader',
-                    options: {},
-                },
-            ],
-        },
-        {
-            test: /\.(woff2?)$/,
-            use: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[path][name].[ext]',
-                    },
                 },
             ],
         },
