@@ -1,9 +1,13 @@
 import React from 'react';
+import Icon from '../Icon';
 const css = require('./button.scss');
 
 const Button: React.FunctionComponent = () => {
     return (
-        <button className={css.Button}>text</button>
+        <button className={css.Button}>
+            <Icon iconName={'IE'} />
+            text
+        </button>
     )
 }
 
