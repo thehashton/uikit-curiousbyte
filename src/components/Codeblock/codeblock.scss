@@ -1,0 +1,17 @@
+.container {
+    background: #1f2929;
+    color: #80f86b;
+    border-radius: 5px;
+    padding: $base-spacing;
+    margin: $base-spacing 0;
+}
+
+.light {
+    background: #f3f3f3;
+    color: #1f2929;
+}
+
+.dark {
+    background: #1f2929;
+    color: #80f86b;
+}

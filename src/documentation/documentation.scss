@@ -1,0 +1,31 @@
+.container {
+    display: block;
+    text-align: start;
+    max-width: 600px;
+    margin: auto;
+
+    h1, h2 {
+        margin-top: $base-spacing*2;
+    }
+
+    h1 {
+        color: $color-body;
+    }
+
+    h2 {
+        color: $color-secondary;
+    }
+
+    p {
+        margin-top: $half-spacing;
+        color: $color-body;
+    }
+
+    pre {
+        background: #1f2929;
+        color: #80f86b;
+        border-radius: 5px;
+        padding: $half-spacing;
+        margin: $base-spacing 0;
+    }
+}

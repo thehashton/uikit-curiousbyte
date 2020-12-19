@@ -5,10 +5,10 @@ import { withKnobs } from "@storybook/addon-knobs";
 const css = require("./iconStory.scss");
 import Icon from "../";
 
-const stories = storiesOf("Icon", module);
+const stories = storiesOf("Components/Icon", module);
 stories.addDecorator(withKnobs);
 
-stories.add("Icon", () => {
+stories.add("Default", () => {
     return (
         <div className={css.container}>
             <div className={css.iconWrapper}>
