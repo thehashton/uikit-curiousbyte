@@ -4,8 +4,8 @@ const css = require('./icon.scss');
 type IconProps = {
     iconName: string,
     className?: string,
-    size?: string,
-    color?: string,
+    size?: 'small'|'medium'|'large',
+    color?: 'primary'|'secondary'|'body'|'white',
 }
 
 const Icon: React.FunctionComponent<IconProps> = (props: IconProps) => {

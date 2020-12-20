@@ -35,6 +35,10 @@
   .body {
     color: $color-body;
   }
+
+  .white {
+    color: $color-white;
+  }
   
   .iconComponent {
     /* use !important to prevent issues with browser extensions that change fonts */
