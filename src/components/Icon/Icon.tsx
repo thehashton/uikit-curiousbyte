@@ -16,7 +16,14 @@ const Icon: React.FunctionComponent<IconProps> = (props: IconProps) => {
     } = props;
 
     return (
-        <i className={`${css.iconComponent} ${css[iconName]} ${className} ${css[size]} ${css[color]}`}></i>
+        <div 
+        className={`
+        ${css.iconComponent} 
+        ${css[iconName]} 
+        ${className} 
+        ${css[size]} 
+        ${css[color]}`
+    }></div>
     )
 }
 

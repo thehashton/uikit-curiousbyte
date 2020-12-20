@@ -1,5 +1,6 @@
 import React, { SyntheticEvent } from 'react';
 import Icon from '../Icon';
+import Loading from '../Loading';
 const css = require('./button.scss');
 
 type ButtonProps = {
@@ -11,6 +12,8 @@ type ButtonProps = {
     iconName?: string,
     iconColor?: 'primary'|'secondary'|'body'|'white',
     loading?: boolean,
+    loadingColor?: 'primary'|'secondary'|'body'|'white', 
+    loadingSize?: 'small'|'medium'|'large',
     className?: string,
     disabled?: boolean,
     inverted?: boolean,
@@ -22,7 +25,10 @@ type ButtonProps = {
 }
 
 const Button: React.FunctionComponent<ButtonProps> = (props: ButtonProps) => {
-    const { color, text, label, loading = true, className = '', disabled = false, inverted, expanded = false, pressed = false, tabIndex = 0, onClick, onKeydown, iconName = '', iconColor = 'white', iconSize = 'small', hasIcon = false } = props;
+    const { color, text, label, loading = false, className = '', 
+    disabled = false, inverted, expanded = false, pressed = false, 
+    tabIndex = 0, onClick, onKeydown, iconName = '', iconColor = 'white', 
+    iconSize = 'small', hasIcon = false, loadingColor = 'body', loadingSize = 'large' } = props;
 
     return (
         <button
@@ -30,7 +36,7 @@ const Button: React.FunctionComponent<ButtonProps> = (props: ButtonProps) => {
         ${css.Button} 
         ${css[color]} 
         ${css[className]}
-        ${disabled ? css.disabled : ''}
+        ${disabled || loading ? css.disabled : ''}
         ${inverted ? css.inverted : ''}
         `} 
         disabled={disabled ? disabled : false} 
@@ -41,7 +47,11 @@ const Button: React.FunctionComponent<ButtonProps> = (props: ButtonProps) => {
         onClick={onClick}
         onKeyDown={onKeydown}
         >
-            
+            {
+                loading && (
+                    <Loading className={css.spinner} color={loadingColor} size={loadingSize}  />
+                )
+            }
             {
                 hasIcon && (
                     <Icon 

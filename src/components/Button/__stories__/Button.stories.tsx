@@ -21,6 +21,7 @@ stories.add("Default", () => {
             iconName={'chrome'}
             hasIcon
             onClick={() => alert('hello world')}
+            loading
             />
 
             <h2>Button variation 2</h2>
