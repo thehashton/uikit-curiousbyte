@@ -61,6 +61,7 @@ function rules(themePaths, selectMode, selectTarget) {
                         @import "_normalize";
                         @import "_fonts.scss";
                         @import "_reset";
+                        @import "_general";
                         `,
                         includePaths: ['src/scss'],
                     },

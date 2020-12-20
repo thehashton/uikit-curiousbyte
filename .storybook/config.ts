@@ -1,8 +1,17 @@
-import { configure } from "@storybook/react";
+import { addParameters, configure } from "@storybook/react";
+import { storySort } from './storybook-sort';
 
-const req = require.context('../src/', true, /.stories.tsx$/);
+addParameters({
+    options: {
+      showRoots: true,
+      storySort: storySort({ order: [ 'Getting Started', ['Intro'],'Components', ['Button']]}),
+    },
+  });
 
-function loadStories() {
+  function loadStories() {
+    const req = require.context('../src/', true, /.stories.tsx$/);
+
+    require('./documentationOrder'); // Documentation Story order list 
     req.keys().forEach((filename) => req(filename))
 }
 
