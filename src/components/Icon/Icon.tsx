@@ -4,8 +4,8 @@ const css = require('./icon.scss');
 type IconProps = {
     iconName: string,
     className?: string,
-    size?: string,
-    color?: string,
+    size?: 'small'|'medium'|'large',
+    color?: 'primary'|'secondary'|'body'|'white',
 }
 
 const Icon: React.FunctionComponent<IconProps> = (props: IconProps) => {
@@ -16,7 +16,14 @@ const Icon: React.FunctionComponent<IconProps> = (props: IconProps) => {
     } = props;
 
     return (
-        <i className={`${css.iconComponent} ${css[iconName]} ${className} ${css[size]} ${css[color]}`}></i>
+        <div 
+        className={`
+        ${css.iconComponent} 
+        ${css[iconName]} 
+        ${className} 
+        ${css[size]} 
+        ${css[color]}`
+    }></div>
     )
 }
 

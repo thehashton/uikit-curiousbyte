@@ -1,3 +1,41 @@
 .Button {
-    border: 5px dashed orange
+    position: relative;
+    border-radius: 5px;
+    padding: $half-spacing $base-spacing;
+}
+
+.disabled {
+    opacity: 0.4;
+    
+    &:hover {
+        cursor: not-allowed;
+    }
+}
+
+.primary {
+    border: 2px solid $color-primary;
+    background-color: $color-primary;
+    color: $color-body;
+}
+
+.secondary {
+    border: 2px solid $color-secondary;
+    background-color: $color-secondary;
+    color: $color-body;
+}
+
+.inverted {
+    background: transparent;
+}
+
+.buttonIcon {
+    margin-right: $half-spacing/2;
+}
+
+.spinner {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 }
