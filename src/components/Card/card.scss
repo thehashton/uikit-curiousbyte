@@ -1,0 +1,54 @@
+.Card {
+    position: relative;
+    top: 0;
+    border: 2px solid $color-primary;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px $color-body;
+    padding: $base-spacing;
+    max-width: 300px;
+    width: 100%;
+}
+
+.dismissed {
+    opacity: 0;
+    top: -100%;
+    transition: top 0.4s, opacity 0.4s;
+}
+
+.topActions {
+    position: absolute;
+    top: $half-spacing;
+    right: $half-spacing;
+}
+
+.dissmissBtn {
+    background: none;
+    border: none;
+}
+
+.dismiss {
+    opacity: 1;
+    top: 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.content {
+    margin: 0 0 $base-spacing 0;
+}
+
+.title, .text {
+    margin: 0;
+}
+
+.text {
+    margin-top: $base-spacing;
+}
+
+.bottomActions {}
+
+.button {
+    color: $color-white;
+}
