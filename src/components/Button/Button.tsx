@@ -35,7 +35,7 @@ const Button: React.FunctionComponent<ButtonProps> = (props: ButtonProps) => {
         className={`
         ${css.Button} 
         ${css[color]} 
-        ${css[className]}
+        ${className}
         ${disabled || loading ? css.disabled : ''}
         ${inverted ? css.inverted : ''}
         `} 
