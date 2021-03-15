@@ -2,5 +2,10 @@
     "presets": [
         "@babel/preset-env",
         "@babel/preset-react"
+    ],
+    "plugins": [
+        "transform-object-rest-spread",
+        "babel-plugin-react-css-modules",
+        "@babel/plugin-transform-typescript"
     ]
 }

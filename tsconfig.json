@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "outDir": "dist",
         "noImplicitAny": true,
         "target": "esnext",
         "lib": [
@@ -9,11 +10,11 @@
         ],
         "allowJs": true,
         "skipLibCheck": true,
-        "esModuleInterop": false,
+        "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "module": "esnext",
+        "module": "commonJS",
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "noEmit": true,
@@ -21,6 +22,10 @@
         "isolatedModules": true
     },
     "include": [
-        "src"
+        "./src/**/*"
+    ],
+    "exclude": [
+        "./dist/**/*",
+        "./node_modules"
     ]
 }
