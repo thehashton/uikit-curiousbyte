@@ -1,12 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.tsx"),
   devtool: "source-map",
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: [".ts", ".tsx", ".js", ".json", ".scss"]
   },
   devServer: {
     contentBase: path.join(__dirname, "src"),
@@ -15,7 +18,25 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "index_bundle.js"
+    filename: "index.js",
+    publicPath: '/',
+    libraryTarget: 'commonjs2',
+    library: 'ui-kit-library',
+    umdNamedDefine: true
+  },
+  externals: {      
+    react: {          
+        commonjs: "react",          
+        commonjs2: "react",          
+        amd: "React",          
+        root: "React"      
+    },      
+    "react-dom": {          
+        commonjs: "react-dom",          
+        commonjs2: "react-dom",          
+        amd: "ReactDOM",          
+        root: "ReactDOM"      
+    },
   },
   mode: process.env.NODE_ENV || "development",
   module: {
@@ -23,7 +44,7 @@ module.exports = {
       {
         // this is so that we can compile any React,
         // ES6 and above into normal ES5 syntax
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         // we do not want anything from node_modules to be compiled
         exclude: /node_modules/,
         use: "babel-loader"
@@ -33,7 +54,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: "awesome-typescript-loader",
         query: {
-          presets: ["react", "es2015"]
+          presets: ["react", "es2015"],
+          declaration: false
         }
       },
       {

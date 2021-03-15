@@ -1,12 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import Codeblock from './components/Codeblock/Codeblock';
+import Button from './components/Button/Button';
+import Card  from './components/Card/Card';
+import Icon  from './components/Icon/Icon';
+import Loading from './components/Loading/Loading';
 
-import './index.scss';
-
-const App: React.FunctionComponent = () => {
-    return (
-            <h1>Hello World</h1>
-    )
-}
-
-ReactDOM.render(<App />, document.getElementById('app'))
+export { Button, Codeblock, Card, Icon, Loading }
